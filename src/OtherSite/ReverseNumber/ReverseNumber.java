@@ -1,4 +1,4 @@
-package ReverseNumber;
+package OtherSite.ReverseNumber;
 
 import java.util.Scanner;
 
@@ -39,7 +39,7 @@ public class ReverseNumber {
             }
 
             if(result && num != 1) {// result가 true(소수 x)인 경우에만
-                numbers[i] = num; // int[]에 저장
+                numbers[i] = num; // int[]에 저장r
             }
         }
 
