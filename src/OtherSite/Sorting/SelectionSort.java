@@ -3,6 +3,7 @@ package OtherSite.Sorting;
 import java.util.ArrayList;
 import java.util.List;
 
+/*선택 정렬 구현 해보기*/
 public class SelectionSort {
     private static List<Integer> selectionList = new ArrayList<>();
 

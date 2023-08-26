@@ -3,7 +3,7 @@ package OtherSite.Sorting;
 import java.util.ArrayList;
 import java.util.List;
 
-// 버블 정렬 구현해보기
+/*버블 정렬 구현해보기*/
 public class BubbleSort {
     private static List<Integer> bubbleList = new ArrayList<>();
     public static void main(String[] args) {
