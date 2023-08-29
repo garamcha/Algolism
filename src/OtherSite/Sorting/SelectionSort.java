@@ -3,7 +3,9 @@ package OtherSite.Sorting;
 import java.util.ArrayList;
 import java.util.List;
 
-/*선택 정렬 구현 해보기*/
+/* 선택 정렬 구현 해보기
+* 단순하지만 비효율적인 방법
+* */
 public class SelectionSort {
     private static List<Integer> selectionList = new ArrayList<>();
 
@@ -48,6 +50,7 @@ public class SelectionSort {
             selectionList.set(x, selectionList.get(maxIndex)); // 최대값 가장 앞으로 이동
             selectionList.set(maxIndex, tmp); // 빈자리(최소값자리)에 쫓겨난 숫자 넣기
         }
+        System.out.println("내림차순 : " + selectionList);
 
 /*        // 최대값으로 오름 차순 정렬
         for (int x = selectionList.size()-1; x >= 0; x--) {
@@ -63,7 +66,5 @@ public class SelectionSort {
             selectionList.set(x, selectionList.get(maxIndex)); // 최솟값 가장 앞으로 이동
             selectionList.set(maxIndex, tmp); // 빈자리(최소값자리)에 쫓겨난 숫자 넣기
         }*/
-
-        System.out.println("내림차순 : " + selectionList);
-    }
-}
+    } // main
+} //SelectionSort Class
