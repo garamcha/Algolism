@@ -5,6 +5,9 @@ import java.util.List;
 
 /*삽입 정렬 구현하기
 * 단순하지만 비효율적인 방법
+* 석호의 아쉬운점 : 삽입은 항상 앞에 정렬 되어있다는 전제하에 돌리는거
+* 그래서 바로 앞에꺼가 자기보다 작으면 더이상 비교안해 됨
+* 
 * */
 public class InsertionSort {
     private static List<Integer> insertionList = new ArrayList<>();

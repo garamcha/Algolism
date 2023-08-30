@@ -22,20 +22,23 @@ public class BubbleSort {
         bubbleList.add(6);
         bubbleList.add(3);
 
+        boolean change;
 
-        // 오름 차순
+        // 오름 차순 - 형우오빠꺼 훔쳐옴
         for (int x = bubbleList.size()-1; x >= 0; x--) { // 스캔
+            change = true;
             for (int i = 0; i < x; i++) { // 단계
-                int fristNum = bubbleList.get(i);
-                int nextNum = bubbleList.get(i+1);
                 // 1. 인접한 수 비교하기
                 if(bubbleList.get(i) > bubbleList.get(i+1)){ // 여기 부등호만 바꿔주면 오름차순/내림차순 정할 수 있음
                     // 2. 크면 자리 바꾸기
                     int tmp = bubbleList.get(i); // 큰 수 빈 공간에 저장
                     bubbleList.set(i, bubbleList.get(i+1)); // 작은 수 앞으로 당기기
                     bubbleList.set(i+1, tmp); // 큰 수 작은 수 뒤에 넣기
+                    change = false;
                 }
             }
+            if(change)
+                break;
         }
         System.out.println("오름차순 : " + bubbleList);
 

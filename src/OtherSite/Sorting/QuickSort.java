@@ -8,6 +8,9 @@ import java.util.List;
 * */
 public class QuickSort {
 
+    // 1. pivot 설정
+    // 2. row, high index 설정
+
     public static void main(String[] args) {
         List<Integer> quickList = new ArrayList<>();
         quickList.add(3);
