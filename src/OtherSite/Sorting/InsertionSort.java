@@ -10,41 +10,36 @@ import java.util.List;
 * 
 * */
 public class InsertionSort {
-    private static List<Integer> insertionList = new ArrayList<>();
     public static void main(String[] args) {
-        insertionList.add(10);
-        insertionList.add(2);
-        insertionList.add(8);
-        insertionList.add(4);
-        insertionList.add(3);
-        insertionList.add(11);
 
-        // 오름차순
-        for (int i = 1; i <insertionList.size() ; i++) {
-            int key = insertionList.get(i);
-            for (int j = i-1; j >=0 ; j--) {
-                // 1. 기준 키 값에서 앞에 다 비교하기
-                if(key < insertionList.get(j)){
-                    // 2. 작으면 앞으로 이동
-                    insertionList.set(j+1, insertionList.get(j)); // 큰 수 한칸 뒤로 밀기(키값 자리로)
-                    insertionList.set(j, key); // 키 값 큰 수 앞에 넣기
-                }
-            }
-        }
-        System.out.println("오름차순: " + insertionList);
-
-        // 내림차순
-        for (int i = 1; i <insertionList.size() ; i++) {
-            int key = insertionList.get(i);
-            for (int j = i-1; j >=0 ; j--) {
-                // 1. 기준 키 값에서 앞에 다 비교하기
-                if(key > insertionList.get(j)){
-                    // 2. 크면 앞으로 이동
-                    insertionList.set(j+1, insertionList.get(j)); // 작은 수 한칸 뒤로 밀기(키값 자리로)
-                    insertionList.set(j, key); // 키 값 작은 수 앞에 넣기
-                }
-            }
-        }
-        System.out.println("내림차순: " + insertionList);
+        //// 내림차순
+        //for (int i = 1; i <insertionList.size() ; i++) {
+        //    int key = insertionList.get(i);
+        //    for (int j = i-1; j >=0 ; j--) {
+        //        // 1. 기준 키 값에서 앞에 다 비교하기
+        //        if(key > insertionList.get(j)){
+        //            // 2. 크면 앞으로 이동
+        //            insertionList.set(j+1, insertionList.get(j)); // 작은 수 한칸 뒤로 밀기(키값 자리로)
+        //            insertionList.set(j, key); // 키 값 작은 수 앞에 넣기
+        //        }
+        //    }
+        //}
+        //System.out.println("내림차순: " + insertionList);
     } // main
+
+    public static List<Integer> insertSorting(List<Integer> list){
+        // 오름차순
+        for (int i = 1; i <list.size() ; i++) {
+            int key = list.get(i);
+            for (int j = i-1; j >=0 ; j--) {
+                // 1. 기준 키 값에서 앞에 다 비교하기
+                if(key < list.get(j)){
+                    // 2. 작으면 앞으로 이동
+                    list.set(j+1, list.get(j)); // 큰 수 한칸 뒤로 밀기(키값 자리로)
+                    list.set(j, key); // 키 값 큰 수 앞에 넣기
+                }
+            }
+        }
+       return list;
+    }
 } // public class InsertionSort

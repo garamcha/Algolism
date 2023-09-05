@@ -8,54 +8,65 @@ import java.util.List;
 * */
 public class QuickSort {
 
-    // 1. pivot 설정
-    // 2. row, high index 설정
-
     public static void main(String[] args) {
         List<Integer> quickList = new ArrayList<>();
-        quickList.add(3);
-        quickList.add(12);
-        quickList.add(4);
-        quickList.add(6);
-        quickList.add(1);
         quickList.add(5);
+        quickList.add(3);
+        quickList.add(8);
+        quickList.add(4);
+        quickList.add(9);
+        quickList.add(1);
+        quickList.add(6);
         quickList.add(2);
-
-        System.out.println(QuickSorting(quickList));
-
+        quickList.add(7);
+        System.out.println(quickList);
+        List<Integer> sortList = quickSorting(quickList);
+        System.out.println(sortList);
     }
-    public static List<Integer> QuickSorting(List<Integer> quickList){
-        // 1. pivot 설정하기
-        int pivot = quickList.get(0); // 피벗(비교 기준 수)
-        List<Integer> smallNumList = new ArrayList<>(); // 피벗기준 작은 수
-        List<Integer> bigNumList = new ArrayList<>(); // 피벗 기준 큰 수
-        if(quickList.size() == 1 || quickList.size() == 0){
-            return quickList;
-        }
-        // 2. 작은수 왼쪽 큰 수 오른쪽 나누기
-        for (int i = 1; i < quickList.size(); i++) {
-            // 피벗보다 작으면
-            if(quickList.get(i) < pivot){
-                // 피벗 기준 작은 수 리스트에 삽입
-                smallNumList.add(quickList.get(i));
-            } else{ // 피벗보다 크면
-                bigNumList.add(quickList.get(i));
+
+    public static List<Integer> quickSorting(List<Integer> list){
+        // 1. pivot 설정
+        int pivot = list.get(0);
+        // 2. low, high 설정
+        int low = 1; // 피벗 다음 위치 부터
+        int high = list.size()-1; // 리스트의 마지막 위ㅊ
+        // 3. low, high 크기 비교 후 교환
+        //3-1. high, low가 엇갈려서 지난 후 스탑
+        while(low < high){
+            if(list.get(low) > list.get(high)){
+                int tmp = list.get(low);
+                list.set(low, list.get(high));
+                list.set(high, tmp);
             }
+            low++;high--;
         }
-        // 3. 마지막 덩어리가 0또는 1일때 까지 반복
-        List<Integer> returnList = new ArrayList<>();
-        returnList.addAll(smallNumList);
-        returnList.add(pivot);
-        returnList.addAll(bigNumList);
-        return returnList;
+        // 4. pivot high 위치랑 교환
+        list.set(0, list.get(high));
+        list.set(high, pivot);
+        // 5-1. pivot 보다 작은 값 리스트
+        List<Integer> smallList = new ArrayList<>();
+        for (int i = 0; i < high; i++) {
+            smallList.add(list.get(i));
+        }
+        // 리스트의 크기가 0이나 1이 되기 전까지 함수 호출
+        if (smallList.size() > 1)
+            smallList = quickSorting(smallList);
+        // 5-2. pivot 보다 큰 값 리스트
+        List<Integer> largeList = new ArrayList<>();
+        for (int i = low; i < list.size(); i++) {
+            largeList.add(list.get(i));
+        }
+        // 리스트의 크기가 0이나 1이 되기 전까지 함수 호출
+        if(largeList.size() > 1)
+            largeList = quickSorting(largeList);
+        System.out.println(list);
+
+        list.addAll(smallList);
+        list.add(pivot);
+        list.addAll(largeList);
+        return list;
     }
 
-    public static void smallSort(List<Integer> smallList){
-        int pivot;
-        if(smallList.size() == 3){
-            pivot = smallList.get(1);
-        }
-    }
 
 }
                                                                       

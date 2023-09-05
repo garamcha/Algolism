@@ -22,7 +22,7 @@ public class SelectionSort {
         // 오름 차순
         for (int x = 0; x < selectionList.size(); x++) {
             int minIndex = x; // 최소값 인덱스
-            for (int i = x; i < selectionList.size(); i++) { // 여기 부등호만 바꿔주면 오름차순/내림차순 정할 수 있음
+            for (int i = x+1; i < selectionList.size(); i++) { // 여기 부등호만 바꿔주면 오름차순/내림차순 정할 수 있음
                 // 1. 최소값 찾기
                 if(selectionList.get(i) < selectionList.get(minIndex)){
                     minIndex = i;
