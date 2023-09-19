@@ -1,4 +1,4 @@
-package OtherSite.Sorting;
+package BasicAlgolism.Sorting;
 
 import java.util.ArrayList;
 import java.util.List;

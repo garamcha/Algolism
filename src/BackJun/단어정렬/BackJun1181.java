@@ -27,7 +27,7 @@ public class BackJun1181 {
             int minIndex = i;
             for (int j = i+1; j < words.size(); j++) {
                 // 3-1. 최소값 찾기
-                if(words.get(i).compareTo(words.get(i+1)) > 0){
+                if(words.get(j).length() < words.get(minIndex).length()){
                     minIndex = j;
                 }
             }
@@ -36,14 +36,14 @@ public class BackJun1181 {
             words.set(i, words.get(minIndex));
             words.set(minIndex, tmp);
         }
-        //for (int i = 0; i < words.size()-1; i++) {
-        //    if((words.get(i).compareTo(words.get(i+1)) > 0)
-        //            && words.get(i).length() == words.get(i+1).length()){
-        //        String tmp = words.get(i);
-        //        words.set(i, words.get(i+1));
-        //        words.set(i+1, tmp);
-        //    }
-        //}
+        for (int i = 0; i < words.size()-1; i++) {
+            if((words.get(i).compareTo(words.get(i+1)) > 0)
+                    && words.get(i).length() == words.get(i+1).length()){
+                String tmp = words.get(i);
+                words.set(i, words.get(i+1));
+                words.set(i+1, tmp);
+            }
+        }
 
         // 4. 같은 길이 사전순으로 정렬하기
         //for (int i = 0; i < words.size(); i++) {
@@ -56,6 +56,7 @@ public class BackJun1181 {
         //            words.set(j, tmp);
         //        }
         //    }
+
         //
         //}
 

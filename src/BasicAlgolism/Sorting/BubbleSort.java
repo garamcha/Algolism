@@ -1,6 +1,5 @@
-package OtherSite.Sorting;
+package BasicAlgolism.Sorting;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /*버블 정렬 구현해보기

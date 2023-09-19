@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
-import OtherSite.Sorting.BubbleSort;
+import BasicAlgolism.Sorting.BubbleSort;
 
 // 삽입 정렬을 이용하여 수 정렬하기
 public class BackJun2750 {
