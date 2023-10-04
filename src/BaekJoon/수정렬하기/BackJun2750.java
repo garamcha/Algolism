@@ -1,4 +1,4 @@
-package BackJun.수정렬하기;
+package BaekJoon.수정렬하기;
 
 import java.io.BufferedReader;
 import java.io.IOException;

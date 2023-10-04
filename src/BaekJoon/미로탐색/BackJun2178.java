@@ -1,4 +1,4 @@
-package BackJun.미로탐색;
+package BaekJoon.미로탐색;
 
 import java.io.BufferedReader;
 import java.io.IOException;

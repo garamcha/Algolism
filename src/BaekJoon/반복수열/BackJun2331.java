@@ -1,4 +1,4 @@
-package BackJun.반복수열;
+package BaekJoon.반복수열;
 
 import java.io.BufferedReader;
 import java.io.IOException;
